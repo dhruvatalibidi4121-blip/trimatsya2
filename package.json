@@ -1,0 +1,16 @@
+{
+  "name": "tri-matsya",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TRI-MATSYA - direct and inclusive market access for small-scale fishers",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

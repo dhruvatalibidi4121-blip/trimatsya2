@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRI-MATSYA | Fisheries Business Platform</title>
+  <meta name="description" content="TRI-MATSYA is a fisheries marketplace and operations platform for fishermen, business buyers, processing partners and administrators.">
+  <meta name="theme-color" content="#073b5c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="sidebar-backdrop" id="sidebarBackdrop" data-action="close-sidebar"></div>
+    <aside class="sidebar" id="sidebar" aria-label="Application navigation">
+      <a class="brand" href="#/dashboard" aria-label="TRI-MATSYA dashboard">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M5 29c6-8 12-8 18 0s12 8 18 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M11 19c5-6 10-6 15 0s9 6 13 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".6"/><path d="M24 6c6 4 9 9 9 14 0 6-4 10-9 14-5-4-9-8-9-14 0-5 3-10 9-14z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-text"><strong>TRI-MATSYA</strong><small>Fisheries platform</small></span>
+      </a>
+      <nav class="side-nav" id="sideNav"></nav>
+      <div class="sidebar-footer">
+        <label class="language-field">
+          <span class="language-label" data-i18n="language">Language</span>
+          <select id="sidebarLanguage" aria-label="Language">
+            <option value="en">English</option>
+            <option value="kn">ಕನ್ನಡ</option>
+            <option value="ml">മലയാളം</option>
+            <option value="ta">தமிழ்</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </label>
+        <div class="sidebar-status">
+          <span class="status-dot" id="integrationDot"></span>
+          <div><strong id="integrationLabel">Platform online</strong><small>Mangaluru, Karnataka</small></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="app-body">
+      <header class="topbar">
+        <button class="icon-btn menu-toggle" id="menuToggle" data-action="open-sidebar" aria-label="Open navigation"><span data-icon="menu"></span></button>
+        <div class="top-search" id="topSearchWrap">
+          <span data-icon="search"></span>
+          <input id="globalSearch" type="search" autocomplete="off" placeholder="Search fish, orders, partners…" aria-label="Search">
+          <kbd>⌘K</kbd>
+          <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+        <button class="icon-btn mobile-search-btn" id="mobileSearchBtn" data-action="mobile-search" aria-label="Search"><span data-icon="search"></span></button>
+        <div class="top-actions">
+          <button class="icon-btn" id="notificationsBtn" data-action="toggle-notifications" aria-label="Notifications">
+            <span data-icon="bell"></span><span class="notification-dot hidden" id="notificationDot"></span>
+          </button>
+          <label class="top-language">
+            <span data-icon="globe"></span>
+            <select id="topLanguage" aria-label="Language">
+              <option value="en">EN</option>
+              <option value="kn">ಕನ್ನಡ</option>
+              <option value="ml">മലയാളം</option>
+              <option value="ta">தமிழ்</option>
+              <option value="hi">हिन्दी</option>
+            </select>
+          </label>
+          <button class="profile-chip" id="profileChip" data-action="open-profile" aria-label="Open profile">
+            <span class="avatar" id="profileAvatar">TM</span>
+            <span class="profile-chip-text"><strong id="profileName">Guest user</strong><small id="profileRole">Sign in to continue</small></span>
+          </button>
+        </div>
+      </header>
+
+      <main class="screen" id="screen" tabindex="-1"></main>
+    </div>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="Mobile navigation"></nav>
+  </div>
+
+  <div class="notification-panel" id="notificationPanel" aria-hidden="true">
+    <div class="panel-head"><strong data-i18n="notifications">Notifications</strong><button class="text-btn" id="markReadBtn" data-action="mark-read" data-i18n="mark_all_read">Mark all read</button></div>
+    <div id="notificationList"></div>
+  </div>
+
+  <div class="modal-root" id="modalRoot" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
